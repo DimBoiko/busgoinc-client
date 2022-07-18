@@ -100,8 +100,8 @@ const PaymentInstruction = ({back,ticket,buyer,inputs,setAbout}) => {
 				</span>	
 				</div>
 				<p className='payment-instruction__contacts'>
-					If you have any problems or questions, please contact our manager in <a href="https://t.me/busgoinc" rel='help' target='_blank'><b>telegram </b></a> 
-					or <a rel='help' target='_blank' href="https://wa.me/380916257316"><b>whatsapp</b></a> .
+					If you have any problems or questions, please contact our manager in <a href="https://t.me/busgoinc" rel="noreferrer" target='_blank'><b>telegram </b></a> 
+					or <a rel="noreferrer" target='_blank' href="https://wa.me/380916257316"><b>whatsapp</b></a> .
 				</p>
 				<div  className="payment-instruction__file">
 					<div ref={uploadArea} className="payment-instruction__drop-area">

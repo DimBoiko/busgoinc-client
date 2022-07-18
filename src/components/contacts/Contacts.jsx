@@ -1,5 +1,5 @@
 import React,{useState,useRef} from 'react';
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { modalToggle } from '../../store/modalSlice';
 import { Transition } from 'react-transition-group';
 import SuccessContacts from '../success-contacts/SuccessContacts';

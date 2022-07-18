@@ -3,7 +3,7 @@ import {useDispatch,useSelector} from 'react-redux'
 import {Transition} from 'react-transition-group'
 import { modalToggle } from '../../store/modalSlice';
 import {IoIosArrowDown} from 'react-icons/io'
-import {AiOutlineCheck,AiOutlineArrowLeft} from 'react-icons/ai'
+import {AiOutlineCheck} from 'react-icons/ai'
 import PassengerForm from '../passenger/PassengerForm';
 import './payment-modal.css'
 import PaymentInstruction from '../paymentInstruction/PaymentInstruction';
