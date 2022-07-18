@@ -1,0 +1,46 @@
+.payment-instruction__success{
+	max-width: 400px;
+	max-height:400px;
+	background-color: white;
+	color: black;
+	z-index:11;
+	padding: 15px 20px;
+	border-radius: 20px;
+}
+.payment-instruction__suc-text{
+	font-family: 'Roboto',sans-serif;
+}
+.payment-instruction__contacts{
+	font-family: 'Roboto',sans-serif;
+}
+.payment-instruction__suc-title{
+	font-size:38px;
+	text-align:center;
+	margin-bottom: 15px;
+	color:rgb(112, 175, 112);
+}
+.payment-instruction__suc-text{
+	font-size:19px;
+	text-align: justify;
+}
+.payment-instruction__contacts{
+	font-size:19px;
+	text-align: justify;
+}
+.payment-instruction__suc-body{
+	position:relative;
+}
+
+
+@media (max-width:870px) {
+	.payment-instruction__success{
+		max-width: 400px;
+		margin-top: 5vh;
+		height:40vh;
+		background-color: white;
+		color: black;
+		z-index:11;
+		padding: 15px 20px;
+		border-radius: 20px;
+	}
+}

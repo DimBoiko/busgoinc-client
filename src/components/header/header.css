@@ -1,0 +1,133 @@
+.header{
+	padding-top: 30px;
+	margin-bottom: 140px;
+	z-index: 10;
+}
+.header__row{
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: space-between;
+}
+@media (max-width:582px) {
+	.header__row{
+		gap: 35px;
+	}
+}
+
+.header__logo{
+	cursor: pointer;
+	font-size: 30px;
+	transition: all 0.3s ease;
+}
+.header__logo:hover{
+	transform: scale(1.1);
+}
+.header__info{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+}
+
+
+.header__btn{
+	font-family: inherit;
+	display: flex;
+	align-items: center;
+	font-size: 22px;
+	color: white;
+	background: none;
+	border: none;	
+	cursor: pointer;
+}
+.header__support{
+	position: relative;
+}
+.header__support button{
+	transition: all 0.3s ease;
+}
+.header__support button:hover{
+	opacity: 0.8;
+	transform: scale(1.05);
+}
+.header__contact{
+	transition: all 0.3s ease;
+}
+.header__contact .header__btn{
+	gap: 10px;
+	font-size: 18px;
+	border: 2px solid rgb(182, 182, 182);
+	padding: 6px 8px;
+	border-radius: 15px;
+	transition: all 0.3s ease;
+}
+
+.header__contact .header__btn:hover{
+	transform: scale(1.05);
+	background-color: rgb(206, 206, 206);
+	color: black;
+}
+
+.header__faq button{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	transition: all 0.3s ease;
+}
+.header__faq button:hover{
+	transform: scale(1.05);
+	opacity: 0.8;
+}
+
+.gl-icon{
+	font-size: 14px;
+	line-height: 0px;
+	color: black;
+	background-color: white;
+	padding: 4px 4px;
+	border-bottom-left-radius: 3px;
+	border-top-left-radius: 3px;
+}
+.gl-icon::after{
+	content: '';
+	display: block;
+	width: 100%;
+	height: 3px;
+	background-color: black;
+	border-radius: 4px;
+	margin-top: 3px;
+}
+
+
+
+
+@media (max-width:1580px) {
+	.header{
+		padding-top: 30px;
+		margin-bottom: 50px;
+	}
+}
+@media (max-width:470px) {
+	.header{
+		padding-top: 30px;
+		margin-bottom: 50px;
+	}
+}
+
+@media (max-width:580px) {
+	.header__row{
+		justify-content: center;
+	}
+}
+@media (max-width:470px) {
+	.header{
+		padding-top: 30px;
+		margin-bottom: 50px;
+	}
+	.header__contact .header__btn{
+		padding:12px 16px;
+		font-size:20px;
+	}
+}

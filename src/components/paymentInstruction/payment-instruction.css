@@ -1,0 +1,179 @@
+.payment-instruction{
+	max-width: 720px;
+	color: black;
+	padding:40px 60px;
+	border-radius: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap:20px;
+	align-self: flex-start;
+	background-color: white;
+	margin-right: 30px;
+	box-shadow: 0px 0px 2px 2px rgba(112, 112, 112, 0.148);
+	overflow: auto;
+}
+.payment-backarrow{
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	font-size:28px;
+	cursor:pointer;
+	transition:all 0.3s ease;
+}
+.payment-backarrow:hover{
+	opacity:0.6;
+}
+.payment-logo{
+	max-width: 180px;
+}
+.payment-instruction__paypal{
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 20px;
+	border-bottom: 1px solid rgba(227, 227, 227, 0.609);
+}
+.payment-instruction__paypal-text{
+	font-size: 17px;
+	text-align: justify;
+	margin-top: 5px;
+}
+.payment-instruction__cards-text{
+	font-size: 17px;
+	text-align: justify;
+	margin-top: 5px;
+}
+.payment-instruction__cards{
+	margin-top: 5px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid rgba(227, 227, 227, 0.609);
+}
+
+.payment-logo-small{
+	max-width: 120px;
+}
+.payment-instruction__cards-img{
+	display: flex;
+	align-items: center;
+}
+.payment-logo-small.visa{
+	margin-top:10px;
+	max-width: 100px;
+}
+.payment-instruction__card-number{
+	margin: 15px 0px 4px 0px;
+}
+.payment-instruction__card-info{
+	margin: 1px 0px 0px 0px;
+	font-size: 15px;
+}
+
+.payment-instruction__crypto{
+	display:flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 15px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid rgba(227, 227, 227, 0.609);
+}
+
+.payment-instruction__important svg{
+	font-size: 36px;
+	color: red;
+}
+.payment-instruction__info{
+	display: flex;
+	align-items: center;
+	margin-top: 15px;
+	gap: 8px;
+}
+
+.payment-instruction__contacts{
+	margin-top: 15px;
+}
+
+.payment-instruction__file{
+	margin-top: 30px;
+}
+.payment-instruction__drop-area{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+	max-width: 100%;
+	max-height: 100px;
+	transition: all 0.3s ease;
+}
+.payment-instruction__drop-area:hover{
+	opacity: 0.7;
+}
+.payment-instruction__drop-upload-img{
+	width: 40px;
+	height: 40px;
+	padding: 8px;
+}
+.payment-instruction__drop-area{
+	position: relative;
+	border: 2px dashed;
+	border-radius: 10px;
+}
+.payment-instruction__file-input{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	right:0px;
+	opacity:0;
+	cursor: pointer;
+}
+
+.payment-instruction__buttons{
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+.payment-instruction__buttons button{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+	font-weight: 300;
+	border: none;
+	background-color: rgba(241, 50, 50, 0.936);
+	color: white;
+	padding: 0px 20px;
+	height: 50px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	border-radius: 5px;
+	width: 100%;
+}
+.payment-instruction__buttons button:hover{
+	background-color: rgba(195, 16, 16, 0.936);
+}
+
+.payment-instruction__buttons button:disabled{
+	background-color: rgba(121, 3, 3, 0.936);
+	cursor:default;
+}
+
+
+
+@media (max-width:670px) {
+	.payment-instruction{
+		max-width: 100vw;
+		color: black;
+		padding:40px 20px;
+		border-radius: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap:20px;
+		align-self: flex-start;
+		background-color: white;
+		margin-right: 0px;
+		box-shadow: 0px 0px 2px 2px rgba(112, 112, 112, 0.148);
+	}
+}

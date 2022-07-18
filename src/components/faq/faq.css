@@ -1,0 +1,133 @@
+
+.faq{
+	visibility: hidden;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.482);
+	z-index: 10;
+	overflow: auto;
+}
+.faq__body{
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.3s ease;
+	max-width: 1600px;
+	position: relative;
+	font-family: 'Roboto',sans-serif;
+	background-color: rgb(205, 231, 202);
+	color: #333;
+	padding: 20px 50px 40px 50px;
+	border-radius: 20px;
+	transform: translateY(10%);
+}
+
+.faq__header{
+	display: flex;
+	justify-content: flex-end;
+	padding: 0px 0px 15px 0px;
+}
+.faq__line{
+	border: 1px solid rgb(177, 218, 172);
+	position: absolute;
+	width: 100%;
+	left: 0px;
+}
+.faq__close{
+	font-size: 22px;
+	font-weight: 600;
+	color: rgba(0, 0, 0, 0.244);
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+.faq__close:hover{
+	color: rgba(0, 0, 0, 0.487);
+}
+.med-svg{
+	width: 48px;
+	height: 32px;
+	box-shadow: 0px 0px 3px 1.5px rgba(0, 0, 0, 0.339);
+}
+.faq__title{
+	margin-top: 40px;
+	text-align: center;
+	font-weight: 900;
+	font-size: 28px;
+}
+
+.faq__row{
+	margin-top: 35px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 25px;
+}
+
+.faq__colum-title{
+	display: flex;
+	align-items: center;
+	gap: 25px;
+}
+.faq__colum-title-text{
+	font-size: 26px;
+	line-height: 40px;
+}
+
+.faq__colum{
+	max-width: 280px;
+}
+.faq__img{
+	max-width: 62px;
+}
+.faq__colum-text{
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	text-align: left;
+	font-size: 16px;
+	line-height: 1.6;
+	letter-spacing: 0em;
+}
+.faq__colum-list{
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	padding-left: 30px;
+}
+.entering{
+	opacity: 1;
+	visibility: visible;
+}
+.entered{
+	opacity: 1;
+	visibility: visible;
+}
+
+@media (max-width:1720px) {
+	.faq__body{
+		transform: translateY(20%);
+		padding: 20px 30px 40px 30px;
+	}
+}
+@media (max-width:1320px) {
+	.faq__body{
+		transform: translateY(25%);
+		padding: 20px 30px 40px 30px;
+	}
+	.faq__colum-text{
+		text-align: justify;
+	}
+}
+@media (max-width:620px) {
+	.faq__colum{
+		max-width: fit-content;
+	}
+	.faq__body{
+		transform: translateY(40%);
+	}
+}

@@ -1,0 +1,23 @@
+.footer{
+	margin-top: 80px;
+	border-top: 1px solid rgba(227, 120, 120, 0.226);
+	padding-bottom: 60px;
+}
+.footer__contacts{
+	margin-top: 5px;
+	font-family: 'Roboto',sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
+}
+.footer__email{
+	font-weight: 800;
+}
+
+.footer__rights{
+	text-transform: uppercase;
+	color: gray;
+	align-self:flex-start;
+}

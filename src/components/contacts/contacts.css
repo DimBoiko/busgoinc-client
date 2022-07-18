@@ -1,0 +1,240 @@
+.contacts{
+	visibility: hidden;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	display: flex;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.482);
+	z-index: 10;
+	overflow: auto;
+}
+
+.contacts__body{
+	display: flex;
+	flex-direction: column;
+
+	max-width: 482px;
+	max-height: 550px;
+	margin-top: 100px;
+	position: relative;
+
+	font-family: 'TT-Norms',sans-serif;
+	background-color: rgb(205, 231, 202);
+	color: #333;
+	padding: 18px 22px 40px 22px;
+	border-radius: 20px;
+
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.3s ease;
+}
+.contacts__header{
+	position: relative;
+	display: flex;
+	font-size: 22px;
+	font-weight: 700;
+	text-align: center;
+}
+.contacts__inputs{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
+}
+.contacts__input{
+	font-family: 'Roboto',sans-serif;
+	display: flex;
+	flex-direction: column;
+	width: 412px;
+}
+@media (max-width:510px) {
+	.contacts__body{
+	
+		max-width: 442px;
+		margin-top: 100px;
+		padding: 18px 22px 40px 22px;
+	}
+	.contacts__input{
+		width: 380px;
+	}
+	
+}
+@media (max-width:460px) {
+	.contacts__body{
+		max-width: 382px;
+		margin-top: 100px;
+		padding: 18px 22px 40px 22px;
+	}
+	.contacts__input{
+		width: 330px;
+	}
+	
+}
+@media (max-width:420px) {
+	.contacts__body{
+		max-width: 362px;
+		margin-top: 100px;
+		padding: 18px 22px 40px 22px;
+	}
+	.contacts__input{
+		width: 300px;
+	}
+}
+@media (max-width:380px) {
+	.contacts__body{
+		max-width: 332px;
+		margin-top: 100px;
+		padding: 18px 22px 40px 22px;
+	}
+	.contacts__input{
+		width: 280px;
+	}
+}
+@media (max-width:370px) {
+	.contacts__title{
+		font-size: 19px;
+	}
+	.contacts__body{
+		max-width: 302px;
+		margin-top: 100px;
+		padding: 18px 22px 40px 22px;
+	}
+	.contacts__input{
+		width: 260px;
+	}
+}
+@media (max-width:320px) {
+	.contacts__title{
+		font-size: 19px;
+	}
+	.contacts__body{
+		max-width: 260px;
+		max-height: 520px;
+		margin-top: 100px;
+		padding: 18px 22px 40px 22px;
+	}
+	.contacts__input{
+		width: 220px;
+	}
+}
+
+@media (max-height:1000px) {
+	.contacts__body{
+		max-height: 550px;
+	}
+}
+@media (max-height:900px) {
+	.contacts__inputs{
+		gap:25px;
+	}
+	.contacts__line{
+		margin-top: 10px !important;
+		margin-bottom: 15px !important;
+	}
+
+}
+@media (max-height:670px) {
+	.contacts__inputs{
+		gap:15px;
+	}
+	.contacts__title{
+		line-height: 18px !important;
+		font-size: 20px;
+	}
+	.contacts__line{
+		margin-top: 10px !important;
+		margin-bottom: 15px !important;
+	}
+	.contacts__body{
+		margin:10px;
+		max-height: 500px;
+		min-height: 500px;
+	}
+}
+.contacts__inp{
+	font-size: 15px;
+	font-family: inherit;
+	height: 42px;
+	padding-left: 10px;
+	border: none;
+	color: rgba(0, 0, 0, 0.569);
+}
+.contacts__inp:focus{
+	outline: 1px solid yellow;
+}
+.contacts__input-title{
+	color: rgba(0, 0, 0, 0.569);
+	margin-bottom: 10px;
+}
+
+.close__contacts{
+	position: absolute;
+	top: -30px;
+	right: -35px;
+	background-color: white;
+	border: 2px solid black;
+	line-height: 0px;
+	padding: 14px 8px;
+	border-radius: 50%;
+	font-weight: 700;
+	font-size: 26px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+.close__contacts:hover{
+	transform: scale(1.1);
+}
+.contacts__example{
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	color: rgba(0, 0, 0, 0.569);
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.contacts__title{
+	letter-spacing: 1px;
+	line-height: 28px;
+	font-family: 'TT-Norms',sans-serif;
+	font-weight: 800;
+}
+.contacts__line{
+	margin-top: 20px;
+	margin-bottom: 40px;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.contacts__sbm-btn{
+	margin-top: 40px;
+	font-family: inherit;
+	font-size: 17px;
+	width: 110px;
+	height: 50px;
+	border-radius: 10px;
+	background-color: rgba(255, 233, 38, 0.38);
+	border: none;
+	cursor: pointer;
+	box-shadow: 0px 5px 5px -2px rgba(0, 0, 0, 0.432);
+	align-self: center;
+	transition: all 0.3s ease;
+}
+.contacts__sbm-btn:hover{
+	box-shadow: none;
+	background-color: rgb(243, 254, 86);
+}
+.contacts__sbm-btn:active{
+	box-shadow: 0px 5px 5px -2px rgba(0, 0, 0, 0.432);
+	background-color: rgb(243, 254, 86);
+}
+
+.entering{
+	opacity: 1;
+	visibility: visible;
+}
+.entered{
+	opacity: 1;
+	visibility: visible;
+}

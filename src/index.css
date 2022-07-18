@@ -1,0 +1,139 @@
+@font-face {
+	font-family: 'TT-Norms';
+	src: url('./fonts/TTNorms-Bold.eot');
+	src: local('TT Norms Bold'), local('TTNorms-Bold'),
+		 url('./fonts/TTNorms-Bold.eot?#iefix') format('embedded-opentype'),
+		 url('./fonts/TTNorms-Bold.woff') format('woff'),
+		 url('./fonts/TTNorms-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'TT-Norms';
+	src: url('./fonts/TTNorms-Regular.eot');
+	src: local('TT Norms Regular'), local('TTNorms-Regular'),
+		 url('./fonts/TTNorms-Regular.eot?#iefix') format('embedded-opentype'),
+		 url('./fonts/TTNorms-Regular.woff') format('woff'),
+		 url('./fonts/TTNorms-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TT-Norms';
+	src: url('./fonts/TTNorms-Light.eot');
+	src: local('TT Norms Light'), local('TTNorms-Light'),
+		 url('./fonts/TTNorms-Light.eot?#iefix') format('embedded-opentype'),
+		 url('./fonts/TTNorms-Light.woff') format('woff'),
+		 url('./fonts/TTNorms-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&family=Yeseva+One&display=swap');
+
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+a{
+	color: inherit;
+	font-family: inherit;
+	text-decoration: none;
+}
+body {
+  margin: 0;
+  width: 100vw;
+  color: white;
+  font-family: 'TT-Norms',sans-serif;
+  overflow-x: hidden;
+}
+.main__background{
+	position: absolute;	
+	width: 100vw;
+   top:0;
+   left:0;
+	bottom: 0;
+	z-index: -1;
+	height: 1080px;
+	object-fit:cover;
+}
+.main__shadow{
+	background-color: rgba(0, 0, 0, 0.376);
+	width: 100vw;
+	position: absolute;
+	z-index: -1;
+	height: 1080px;
+}
+.main__title{
+	text-align: center;
+	margin-bottom: 80px;
+	font-size: 26px;
+}
+.container{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+@media (max-width:830px) {
+	.main__background{
+		position: absolute;	
+		width: 100vw;
+		top:0;
+		left:0;
+		bottom: 0;
+		z-index: -1;
+		height: 1180px;
+		object-fit:cover;
+	}
+	.main__shadow{
+		background-color: rgba(0, 0, 0, 0.376);
+		width: 100vw;
+		position: absolute;
+		z-index: -1;
+		height: 1180px;
+	}
+}
+@media (max-width:590px) {
+	.main__background{
+		position: absolute;	
+		width: 100vw;
+		top:0;
+		left:0;
+		bottom: 0;
+		z-index: -1;
+		height: 1280px;
+		object-fit:cover;
+	}
+	.main__shadow{
+		background-color: rgba(0, 0, 0, 0.376);
+		width: 100vw;
+		position: absolute;
+		z-index: -1;
+		height: 1280px;
+	}
+}
+@media (max-width:460px) {
+	.main__background{
+		position: absolute;	
+		width: 100vw;
+		top:0;
+		left:0;
+		bottom: 0;
+		z-index: -1;
+		height: 1580px;
+		object-fit:cover;
+	}
+	.main__shadow{
+		background-color: rgba(0, 0, 0, 0.376);
+		width: 100vw;
+		position: absolute;
+		z-index: -1;
+		height: 1580px;
+	}
+	.main__title{
+		margin-bottom: 30px;
+	}
+}
