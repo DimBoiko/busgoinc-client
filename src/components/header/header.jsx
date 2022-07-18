@@ -23,7 +23,7 @@ const Header = () => {
 			<div className="container">
 				<div className="header__row">
 					<h1 className="header__logo">
-						<a href="#">BusGoInc</a>
+						BusGoInc
 					</h1>
 					<div className="header__info">
 						<div className="header__support">

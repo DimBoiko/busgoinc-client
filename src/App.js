@@ -27,7 +27,8 @@ function App() {
 
 	useEffect(() => {
 		getTickets()
-	},[]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	},[dispatch]);
 
 	const closeModals = (e) => {
 		const path = e.nativeEvent.path

@@ -47,6 +47,7 @@ const PaymentModal = () => {
 		}
 		if(e.target.id === 'payment-phone'){
 			setUser({...user,phone : e.target.value})
+			// eslint-disable-next-line no-useless-escape
 			const regPhone = /^([+]?[0-9\s-\(\)]{3,25})*$/i;
 			const phoneValid = regPhone.test(String(user.phone).toLowerCase())
 
@@ -65,6 +66,7 @@ const PaymentModal = () => {
 		if(buyerData.email && !instructionVisible) emailInput.current.style.boxShadow = '0px 0px 1px 1px #32c453'
 		if(buyerData.phone && !instructionVisible) phoneInput.current.style.boxShadow = '0px 0px 1px 1px #32c453'
 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	},[instructionVisible])
 
 	useEffect(()=>{
@@ -84,6 +86,7 @@ const PaymentModal = () => {
 		}else{
 			setIsValid(false)
 		}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	},[user,checkbox,inputs])
 
 	useEffect(()=>{

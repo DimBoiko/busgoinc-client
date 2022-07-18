@@ -27,6 +27,7 @@ const PassengerForm = ({passenger}) => {
 		if(user.lastname.length < 3){
 			lastnameInput.current.style.boxShadow = '0px 0px 0px 0px #32c453'
 		}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	},[user])
 
 	return (
