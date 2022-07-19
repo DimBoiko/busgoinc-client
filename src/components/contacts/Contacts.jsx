@@ -83,7 +83,7 @@ const Contacts = ({visible}) => {
 					</div>
 					<div className="contacts__input">
 						<span className='contacts__input-title'>PHONE/MESSANGER NUMBER *</span>
-						<input type="tel" placeholder='+380930943212' className='contacts__inp tel' value={tel} onChange={(e)=>setTel(e.target.value)} />
+						<input type="tel" placeholder='+380505685793' className='contacts__inp tel' value={tel} onChange={(e)=>setTel(e.target.value)} />
 					</div>
 					<div className="contacts__input">
 						<span className='contacts__input-title'>Description *</span>

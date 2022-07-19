@@ -12,7 +12,7 @@ const SuccessContacts = ({text}) => {
 				<div className='payment-instruction__suc-text'>{text}</div>
 				<div className='payment-instruction__contacts'>
 				If you have any problems, please contact our manager in <a href="https://t.me/busgoinc" rel='noreferrer' target='_blank'><b>telegram </b></a> 
-				or <a rel='noreferrer' target='_blank' href="https://wa.me/380916257316"><b>whatsapp</b></a>.
+				or <a rel='noreferrer' target='_blank' href="https://wa.me/380505685793"><b>whatsapp</b></a>.
 				</div>
 			</div>
 		</div>

@@ -22,7 +22,7 @@ const Support = ({visible}) => {
 					</div>
 					<div className="support__item">
 						<img src={whatsapp} alt="whatsapp"/>
-						<span>+380(91)-625-73-16</span>
+						<span>+380(50)-568-57-93</span>
 					</div>
 				</div>
 			</div>)}
