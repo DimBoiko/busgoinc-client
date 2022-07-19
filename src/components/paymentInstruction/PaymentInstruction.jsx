@@ -49,9 +49,9 @@ const PaymentInstruction = ({back,ticket,buyer,inputs,setAbout}) => {
 	}
 	return (
 		<div className="payment-instruction">
-			<div className="payment-backarrow">
-				<AiOutlineArrowLeft onClick={() => back(false)}/>
-			</div>
+			<button onClick={() => back(false)} className="payment-backarrow">
+				<AiOutlineArrowLeft />
+			</button>
 			{
 				success.state
 				?
@@ -72,14 +72,7 @@ const PaymentInstruction = ({back,ticket,buyer,inputs,setAbout}) => {
 						<img className="payment-logo-small visa" src={visa} alt="visa" />
 					</div>
 					<div className="payment-instruction__cards-text">
-						Make a payment in the amount of <b>{ticket.price} UAH</b> using mastercard/visa 
-						to the card:
-						<div className="payment-instruction__card-number">
-							<b>5123 3453 5467 7867</b>
-						</div>
-						<div className='payment-instruction__card-info'>(First name Last name)</div>
-							<br/>
-						Then upload a screen or photo confirming the payment.
+						Make a payment in the amount of <b>{ticket.price} UAH</b> using mastercard/visa, due to the war on the territory of Ukraine, to pay for {ticket.passengers > 1 ? 'tickets' : 'a ticket'} by card, contact manager.
 					</div>
 				</div>
 				<div className="payment-instruction__crypto">
@@ -99,14 +92,15 @@ const PaymentInstruction = ({back,ticket,buyer,inputs,setAbout}) => {
 					 hours you will receive a {ticket.passengers > 1 ? 'tickets' : 'ticket'} by mail.
 				</span>	
 				</div>
-				<p className='payment-instruction__contacts'>
+				<p className='payment-ins truction__contacts'>
+					<br/>
 					If you have any problems or questions, please contact our manager in <a href="https://t.me/busgoinc" rel="noreferrer" target='_blank'><b>telegram </b></a> 
 					or <a rel="noreferrer" target='_blank' href="https://wa.me/380916257316"><b>whatsapp</b></a> .
 				</p>
 				<div  className="payment-instruction__file">
 					<div ref={uploadArea} className="payment-instruction__drop-area">
 						<FiUpload className='payment-instruction__drop-upload-img'/>
-						<input accept="image/*,application/pdf" onChange={(e) => onFileUpload(e) } className='payment-instruction__file-input' type="file" alt='screen of payment' />
+						<input onChange={(e) => onFileUpload(e) } className='payment-instruction__file-input' type="file" alt='screen of payment' />
 						<span className='payment-instruction__file-here'>{fileName}</span>
 					</div>
 				</div>

@@ -72,7 +72,6 @@
 	padding: 8px 6px;
 	border:1px solid rgba(128, 128, 128, 0.647);
 	border-radius: 5px;
-	outline:none;
 	transition: all 0.3s ease;
 }
 .payment-modal__input input::placeholder{
@@ -269,6 +268,8 @@
 	right: 15px;
 	top:10px;
 	transition: all 0.3s ease;
+	background-color: transparent;
+	border: none;
 }
 .payment-close:hover{
 	opacity: 0.7;
@@ -405,4 +406,10 @@
 }
 .rotate-arrow{
 	transform: rotate(180deg);
+}
+
+.green-show{
+	outline:#32c453 solid 1px ;
+	border-radius: 13px;
+	/* box-shadow: 0px 0px 1px 1px #32c453; */
 }

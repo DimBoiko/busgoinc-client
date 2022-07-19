@@ -33,15 +33,34 @@ const Contacts = ({visible}) => {
 	}
 
 	const closeContacts = (e) => {
-		const isSuccess = !!e.nativeEvent.path.find((el) =>  el.className ? el.classList.contains('contacts-success') : '')
-		const isClose = e.target.className === 'contacts-success__close'
-		if(isSuccess && !isClose) return
-		if(!e.nativeEvent.path.includes(contactsBody.current) || e.target.className === 'close__contacts'){
+		e.stopPropagation()
+		e.preventDefault()
+		console.log(e.target);
+		if(e.target.className === 'close__contacts'){
 			setSuccess(false)
 			dispatch(modalToggle('contacts'))
-			document.body.style.overflow = 'auto'
+			document.body.style.overflow = 'auto'			
 		}
+		if(e.target.className === 'contacts-success__close'){
+			setSuccess(false)
+			dispatch(modalToggle('contacts'))
+			document.body.style.overflow = 'auto'			
+		}
+		if(e.target.classList.contains('contacts')){
+			setSuccess(false)
+			dispatch(modalToggle('contacts'))
+			document.body.style.overflow = 'auto'	
+		}
+		// const isSuccess = !!e.nativeEvent.path.find((el) =>  el.className ? el.classList.contains('contacts-success') : '')
+		// const isClose = e.target.className === 'contacts-success__close'
+		// if(isSuccess && !isClose) return
+		// if(!e.nativeEvent.path.includes(contactsBody.current) || e.target.className === 'close__contacts'){
+		// 	setSuccess(false)
+		// 	dispatch(modalToggle('contacts'))
+		// 	document.body.style.overflow = 'auto'
+		// }
 	}
+
 	return (
 		<Transition in={visible} timeout={300}>
 		{state => <div onClick={(e)=>closeContacts(e)} className={`contacts ${state}`}>
@@ -54,7 +73,7 @@ const Contacts = ({visible}) => {
 					<div className="contacts__title">
 						Leave a request and our specialists will be happy to answer your questions
 					</div>
-					<span className='close__contacts'>&times;</span>
+					<button onClick={(e)=>closeContacts(e)} className='close__contacts'>&times;</button>
 				</div>
 				<hr className='contacts__line'/>
 				<div className="contacts__inputs">
@@ -71,7 +90,7 @@ const Contacts = ({visible}) => {
 						<input type="text" placeholder='How to...' className='contacts__inp tel' value={desc} onChange={(e)=>setDesc(e.target.value)} />
 					</div>
 				</div>
-				<button className='contacts__sbm-btn' type="submit">Submit</button>
+				<button onClick={(e)=>sentContactsData(e)}  className='contacts__sbm-btn' type="submit">Submit</button>
 			</form>
 			}
 			

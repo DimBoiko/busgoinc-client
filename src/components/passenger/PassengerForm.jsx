@@ -16,16 +16,22 @@ const PassengerForm = ({passenger}) => {
 	useEffect(()=>{
 		dispatch(setInputs(user))
 		if(user.name.length > 2){
-			nameInput.current.style.boxShadow = '0px 0px 1px 1px #32c453'
+			nameInput.current.classList.add('green-show')
+			// nameInput.current.style.boxShadow = '0px 0px 1px 1px #32c453'
 		}
 		if(user.name.length < 3){
-			nameInput.current.style.boxShadow = '0px 0px 0px 0px #32c453'
+			nameInput.current.classList.remove('green-show')
+			// nameInput.current.style.boxShadow = '0px 0px 0px 0px #32c453'
 		}
 		if(user.lastname.length > 2){
-			lastnameInput.current.style.boxShadow = '0px 0px 1px 1px #32c453'
+			lastnameInput.current.classList.add('green-show')
+
+			// lastnameInput.current.style.boxShadow = '0px 0px 1px 1px #32c453'
 		}
 		if(user.lastname.length < 3){
-			lastnameInput.current.style.boxShadow = '0px 0px 0px 0px #32c453'
+			lastnameInput.current.classList.remove('green-show')
+
+			// lastnameInput.current.style.boxShadow = '0px 0px 0px 0px #32c453'
 		}
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	},[user])

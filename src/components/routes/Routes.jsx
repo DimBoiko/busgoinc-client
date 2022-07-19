@@ -37,26 +37,61 @@ const Routes = ({searchValue,formData,visible}) => {
 			date:formData.date,
 			passengers:formData.passengers,
 		}
-		const routes = e.nativeEvent.path.splice(0,2).filter((route)=> route.classList)
-		const selectedCities = routes.find((rt)=> rt.className === 'routes__item')
-		const firstLength = selectedCities.childNodes[0].textContent.length
-		const secondLength = selectedCities.childNodes[1].textContent.length
-		selectedRoute.from = 
-		selectedCities.childNodes[0].textContent[0].toUpperCase()
-		 +
-		selectedCities.childNodes[0].textContent.slice(1,firstLength - 1).toLowerCase()
+		if(e.target.tagName === 'BUTTON'){
+			const selCities = Array.from(e.target.childNodes).map((el) => el.textContent);
+			console.log(selCities); 
+			const firstLength = selCities[0].length
+			const secondLength = selCities[1].length
+			selectedRoute.from = 
+			selCities[0][0].toUpperCase()
+			 +
+		 	selCities[0].slice(1,firstLength - 1).toLowerCase()
 
-		selectedRoute.where = 
-		selectedCities.childNodes[1].textContent[0].toUpperCase()
-		+
-		selectedCities.childNodes[1].textContent.slice(1,secondLength).toLowerCase()
-		dispatch(setForm(selectedRoute))
+			 selectedRoute.where = 
+			 selCities[1][0].toUpperCase()
+			 +
+			 selCities[1].slice(1,secondLength).toLowerCase()
+	 		 dispatch(setForm(selectedRoute))
+		}
+		if(e.target.tagName === 'SPAN'){
+			const route = e.target.parentNode
+			const selCities = Array.from(route.childNodes).map((el) => el.textContent);
+			console.log(selCities); 
+			const firstLength = selCities[0].length
+			const secondLength = selCities[1].length
+			selectedRoute.from = 
+			selCities[0][0].toUpperCase()
+			 +
+		 	selCities[0].slice(1,firstLength - 1).toLowerCase()
+
+			 selectedRoute.where = 
+			 selCities[1][0].toUpperCase()
+			 +
+			 selCities[1].slice(1,secondLength).toLowerCase()
+	 		 dispatch(setForm(selectedRoute))
+		}
+
+
+		// const routes = e.nativeEvent.path.splice(0,2).filter((route)=> route.classList)
+		// const selectedCities = routes.find((rt)=> rt.className === 'routes__item')
+		// const firstLength = selectedCities.childNodes[0].textContent.length
+		// const secondLength = selectedCities.childNodes[1].textContent.length
+		// selectedRoute.from = 
+		// selectedCities.childNodes[0].textContent[0].toUpperCase()
+		//  +
+		// selectedCities.childNodes[0].textContent.slice(1,firstLength - 1).toLowerCase()
+
+		// selectedRoute.where = 
+		// selectedCities.childNodes[1].textContent[0].toUpperCase()
+		// +
+		// selectedCities.childNodes[1].textContent.slice(1,secondLength).toLowerCase()
+
 	}
 	return (
 		visible
 		?
 			<div className={`routes`}>
-				<div onClick={(e)=> selectRoute(e)} className={`routes__items`}>
+				<div  className={`routes__items`}>
 					 {routes.map((route,index)=>{
 						let  [firstCity,secondCity] = []
 						 if(route.split('-').length > 2 ){
@@ -73,7 +108,7 @@ const Routes = ({searchValue,formData,visible}) => {
 						 }
 						 
 						 return (
-							 <button key={index} className="routes__item">
+							 <button onClick={(e)=> selectRoute(e)} key={index} className="routes__item">
 								 <span className={`first__city ${searchValue === 'from' ? 'selected-city' :''}`} >{firstCity},</span>
 								 <span className={`second__city ${searchValue === 'where' ? 'selected-city' :''}`}>{secondCity}</span>
 							 </button>

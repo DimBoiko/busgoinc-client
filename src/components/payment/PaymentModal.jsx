@@ -34,14 +34,16 @@ const PaymentModal = () => {
 	const inputsValidate = (e) => {
 		if(e.target.id === 'payment-email'){
 			setUser({...user,email : e.target.value})
-			const reEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			// eslint-disable-next-line no-useless-escape
+			const reEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 			const emailValid = reEmail.test(String(user.email).toLowerCase())
 			if(emailValid){
-				emailInput.current.style.boxShadow = '0px 0px 1px 1px #32c453'
+				console.log(e.target);
+				e.target.classList.add('green-show')
 				const newData = {...buyerData,email:true}
 				setBuyerData(newData)
 			}else{
-				emailInput.current.style.boxShadow = '0px 0px 0px 0px #32c453'
+				e.target.classList.remove('green-show')
 				setBuyerData({...buyerData,email:false})
 			}
 		}
@@ -52,11 +54,11 @@ const PaymentModal = () => {
 			const phoneValid = regPhone.test(String(user.phone).toLowerCase())
 
 			if(phoneValid && String(user.phone).length + 1 > 6){
-				phoneInput.current.style.boxShadow = '0px 0px 1px 1px #32c453'
+				e.target.classList.add('green-show')
 				setBuyerData({...buyerData,phone:true})
 				return
 			}
-			phoneInput.current.style.boxShadow = '0px 0px 0px 0px #32c453'
+			e.target.classList.remove('green-show')
 			setBuyerData({...buyerData,phone:false})
 		}
 	}
@@ -100,11 +102,16 @@ const PaymentModal = () => {
 	},[visible,ticket.passengers]);
 
 	const closePayment = (e) => {
-		const close = !!e.nativeEvent.path.find((el) => el.classList ? el.classList.contains('payment-modal__body') : '' )
-		if(!close || e.target.className === 'payment-close'){
+		e.stopPropagation()
+		if(e.target.classList.contains('payment-modal')){
 			document.body.style.overflow = 'auto'
 			dispatch(modalToggle('payment'))
-			setInstructionVisible(false)
+			setInstructionVisible(false)						
+		}
+		if(e.target.className === 'payment-close'){
+			document.body.style.overflow = 'auto'
+			dispatch(modalToggle('payment'))
+			setInstructionVisible(false)			
 		}
 	}
 
@@ -338,7 +345,7 @@ const PaymentModal = () => {
 				</div>
 				}
 				
-				<div className="payment-close">&times;</div>
+				<button onClick={(e) => closePayment(e)} className="payment-close">&times;</button>
 			</div>
 		</div>}
 		</Transition>

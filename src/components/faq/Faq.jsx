@@ -12,10 +12,18 @@ const Faq = ({visible}) => {
 	const faqBody = useRef(null)
 
 	const closeFaq = (e) => {
-		if(!e.nativeEvent.path.includes(faqBody.current) || e.target.className === 'faq__close'){
+		e.stopPropagation()
+		if(e.target.classList.contains('faq')){
 			dispatch(modalToggle('faq'))
 			document.body.style.overflow = 'auto'
+			return
 		}
+		if(e.target.className === 'faq__close'){
+			dispatch(modalToggle('faq'))
+			document.body.style.overflow = 'auto'
+			return			
+		}
+
 	}
 
 	return (
@@ -23,7 +31,7 @@ const Faq = ({visible}) => {
 		{state => <div onClick={(e)=> closeFaq(e)} className={`faq ${state}`}>
 			<div ref={faqBody} className={`faq__body ${state}`}>
 				<div className="faq__header">
-					<span className='faq__close'>&times;</span>
+					<button onClick={(e) => {closeFaq(e)}} className='faq__close'>&times;</button>
 				</div>
 				<hr className='faq__line'/>
 				<div className="faq__title">

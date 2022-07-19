@@ -1,5 +1,5 @@
 .payment-instruction{
-	max-width: 720px;
+	max-width: 620px;
 	color: black;
 	padding:40px 60px;
 	border-radius: 20px;
@@ -20,6 +20,8 @@
 	font-size:28px;
 	cursor:pointer;
 	transition:all 0.3s ease;
+	background-color: transparent;
+	border: none;
 }
 .payment-backarrow:hover{
 	opacity:0.6;
@@ -125,6 +127,7 @@
 	right:0px;
 	opacity:0;
 	cursor: pointer;
+	z-index: 11;
 }
 
 .payment-instruction__buttons{

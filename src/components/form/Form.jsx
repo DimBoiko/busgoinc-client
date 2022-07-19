@@ -51,19 +51,24 @@ const Form = () => {
 		}
 	}
 
-	const togglePassengers = (e) => {
+	const closeRoutes = (e) => {
 		if(!e.target.classList.contains('form__input')){
 			dispatch(setRoutes(false))
 		}
 		if(!e.nativeEvent.path.includes(passengerBlock.current) && !passengersModal.current.classList.contains('show-passengers')){
 			return
 		}
-		if(!e.nativeEvent.path.includes(passengersModal.current)){
-			dispatch(formHandler(!passengersView))
+	}
+
+	const togglePassengers = (e) => {
+		if(e.target.className === 'form__item-passengers' || e.target.className === 'form__item-passenger-btn remove' || e.target.className === 'form__item-passenger-btn add' || e.target.className === 'form__item-passengers-value input'){
+			return
 		}
+		dispatch(formHandler(!passengersView))
 	}
 
 	const reverseCities = (e) => {
+		e.preventDefault()
 		setFormInputs({...formInputs,from:formInputs.where,where:formInputs.from})
 	}
 
@@ -112,7 +117,7 @@ const Form = () => {
 
 
 	return (
-	 <form onClick={(e)=>togglePassengers(e)} className="tickets form" action="">
+	 <form onClick={(e)=>closeRoutes(e)} className="tickets form" action="">
       <div className="form__items">
         <div className="form__item from">
           <div className="form__item-input">
@@ -128,24 +133,25 @@ const Form = () => {
               value={formInputs.from}
             />
           </div>
-          <svg
-			 	onClick={reverseCities}
-            className="arrows-svg"
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M18.3701 7.99993L13.8701 10.598V8.99993H6.88989V12.9999H4.88989V6.99993H13.8701V5.40186L18.3701 7.99993Z"
-              fill="currentColor"
-            />
-            <path
-              d="M10.1299 16.9999H19.1101V10.9999H17.1101V14.9999H10.1299V13.4019L5.62988 15.9999L10.1299 18.598V16.9999Z"
-              fill="currentColor"
-            />
-          </svg>
+			 <svg
+			 onClick={reverseCities}
+				 className="arrows-svg"
+				 width="28"
+				 height="28"
+				 viewBox="0 0 24 24"
+				 fill="none"
+				 xmlns="http://www.w3.org/2000/svg"
+			  >
+				 <path
+					d="M18.3701 7.99993L13.8701 10.598V8.99993H6.88989V12.9999H4.88989V6.99993H13.8701V5.40186L18.3701 7.99993Z"
+					fill="currentColor"
+				 />
+				 <path
+					d="M10.1299 16.9999H19.1101V10.9999H17.1101V14.9999H10.1299V13.4019L5.62988 15.9999L10.1299 18.598V16.9999Z"
+					fill="currentColor"
+				 />
+			  </svg>
+          
 			 {searchValue === 'from' 
 			 ?
 			 <Routes searchValue={searchValue} formData={formInputs} visible={routes}/>
@@ -230,7 +236,7 @@ const Form = () => {
           </div>
         </div>
 
-        <div ref={passengerBlock} className="form__item passengers">
+        <div onClick={(e) => {togglePassengers(e)}} ref={passengerBlock} className="form__item passengers">
           <div tabIndex="6" className="form__item-input">
             <span className="form__item-subtitle">Passengers</span>
             <span className="form__item-passengers-value">{formInputs.passengers}</span>

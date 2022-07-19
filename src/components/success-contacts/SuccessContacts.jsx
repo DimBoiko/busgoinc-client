@@ -5,9 +5,9 @@ const SuccessContacts = ({text}) => {
 	return (
 		<div className="payment-instruction__success contacts-success">
 			<div className="payment-instruction__suc-body">
-				<div className="contacts-success__close">
+				<button className="contacts-success__close">
 					&times;
-				</div>
+				</button>
 				<h2 className="payment-instruction__suc-title" >Success!</h2>
 				<div className='payment-instruction__suc-text'>{text}</div>
 				<div className='payment-instruction__contacts'>
