@@ -35,9 +35,7 @@ const PaymentModal = () => {
 		if(e.target.id === 'payment-email'){
 			setUser({...user,email : e.target.value})
 			// eslint-disable-next-line no-useless-escape
-			const reEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-			const emailValid = reEmail.test(String(user.email).toLowerCase())
-			if(emailValid){
+			if(user.email.length > 3){
 				console.log(e.target);
 				e.target.classList.add('green-show')
 				const newData = {...buyerData,email:true}
@@ -50,10 +48,8 @@ const PaymentModal = () => {
 		if(e.target.id === 'payment-phone'){
 			setUser({...user,phone : e.target.value})
 			// eslint-disable-next-line no-useless-escape
-			const regPhone = /^([+]?[0-9\s-\(\)]{3,25})*$/i;
-			const phoneValid = regPhone.test(String(user.phone).toLowerCase())
 
-			if(phoneValid && String(user.phone).length + 1 > 6){
+			if(String(user.phone).length + 1 > 6){
 				e.target.classList.add('green-show')
 				setBuyerData({...buyerData,phone:true})
 				return
@@ -65,8 +61,8 @@ const PaymentModal = () => {
 
 	useEffect(()=>{
 		setCheckbox(false)
-		if(buyerData.email && !instructionVisible) emailInput.current.style.boxShadow = '0px 0px 1px 1px #32c453'
-		if(buyerData.phone && !instructionVisible) phoneInput.current.style.boxShadow = '0px 0px 1px 1px #32c453'
+		if(buyerData.email && !instructionVisible) emailInput.current.classList.add('green-show')
+		if(buyerData.phone && !instructionVisible) phoneInput.current.classList.add('green-show')
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	},[instructionVisible])
