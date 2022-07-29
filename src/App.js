@@ -16,9 +16,14 @@ function App() {
 	const getTickets = async () => {
 		try{
 			const res =  await fetch('https://busgoincapp.herokuapp.com/')
-			const tickets =  await res.json()
+			let tickets =  await res.json()
 			if(tickets){
-				dispatch(setTickets(tickets))
+				let newPriceTickets = tickets.map((ticket) => {
+					const index = String(Math.round(Number(ticket.Price)+Number(ticket.Price) / 100 * 15)).length - 1
+					const price = String(Math.round(Number(ticket.Price)+Number(ticket.Price) / 100 * 15)).split('').splice(0,index).join('') + '0'
+					return {...ticket, Price : price}
+				})
+				dispatch(setTickets(newPriceTickets))
 			}
 		}catch(e){
 			console.log(e)
@@ -28,7 +33,7 @@ function App() {
 	useEffect(() => {
 		getTickets()
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	},[dispatch]);
+	},[]);
 
 	const closeModals = (e) => {
 		const path = e.nativeEvent.path
