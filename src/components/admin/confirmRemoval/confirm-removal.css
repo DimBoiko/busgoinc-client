@@ -1,0 +1,27 @@
+.confirm-removal{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.628);
+	z-index: 1;
+}
+.confirm-removal__body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 20px;
+	z-index: 10;
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+}
+.confirm-removal__buttons{
+	display: flex;
+	gap: 10px;
+}

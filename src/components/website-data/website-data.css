@@ -1,0 +1,13 @@
+.website-data{
+	max-width: fit-content;
+	margin: 20px auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 5px;	
+}
+.website-data__multiplier{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}

@@ -1,0 +1,28 @@
+.login-modal{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+.login-modal__body{
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(169, 209, 255, 0.62);
+	padding: 20px;
+	border-radius: 20px;
+}
+.login-modal__inputs{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.login-modal__input{
+	font-size: 17px;
+	width: 250px;
+	padding: 3px;
+}
+.login-modal__login{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

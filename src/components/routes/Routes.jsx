@@ -39,7 +39,6 @@ const Routes = ({searchValue,formData,visible}) => {
 		}
 		if(e.target.tagName === 'BUTTON'){
 			const selCities = Array.from(e.target.childNodes).map((el) => el.textContent);
-			console.log(selCities); 
 			const firstLength = selCities[0].length
 			const secondLength = selCities[1].length
 			selectedRoute.from = 
@@ -56,7 +55,6 @@ const Routes = ({searchValue,formData,visible}) => {
 		if(e.target.tagName === 'SPAN'){
 			const route = e.target.parentNode
 			const selCities = Array.from(route.childNodes).map((el) => el.textContent);
-			console.log(selCities); 
 			const firstLength = selCities[0].length
 			const secondLength = selCities[1].length
 			selectedRoute.from = 
@@ -70,21 +68,6 @@ const Routes = ({searchValue,formData,visible}) => {
 			 selCities[1].slice(1,secondLength).toLowerCase()
 	 		 dispatch(setForm(selectedRoute))
 		}
-
-
-		// const routes = e.nativeEvent.path.splice(0,2).filter((route)=> route.classList)
-		// const selectedCities = routes.find((rt)=> rt.className === 'routes__item')
-		// const firstLength = selectedCities.childNodes[0].textContent.length
-		// const secondLength = selectedCities.childNodes[1].textContent.length
-		// selectedRoute.from = 
-		// selectedCities.childNodes[0].textContent[0].toUpperCase()
-		//  +
-		// selectedCities.childNodes[0].textContent.slice(1,firstLength - 1).toLowerCase()
-
-		// selectedRoute.where = 
-		// selectedCities.childNodes[1].textContent[0].toUpperCase()
-		// +
-		// selectedCities.childNodes[1].textContent.slice(1,secondLength).toLowerCase()
 
 	}
 	return (

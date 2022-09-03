@@ -30,7 +30,7 @@ const PaymentInstruction = ({back,ticket,buyer,inputs,setAbout}) => {
 			if(file){
 				data.append('screen',file)
 			}
-			const res = await fetch('https://busgoincapp.herokuapp.com/purchase',{
+			const res = await fetch('https://busgoinc.herokuapp.com/purchase',{
 				method:'POST',
 				body:data
 			})

@@ -17,7 +17,7 @@ const Contacts = ({visible}) => {
 		try{
 			e.preventDefault()
 			const data = {name,tel,desc}
-			const res = await fetch('https://busgoincapp.herokuapp.com/contacts',{
+			const res = await fetch('https://busgoinc.herokuapp.com/contacts',{
 				method:'POST',
 				headers:{
 					'Content-Type':'application/json'
@@ -51,14 +51,7 @@ const Contacts = ({visible}) => {
 			dispatch(modalToggle('contacts'))
 			document.body.style.overflow = 'auto'	
 		}
-		// const isSuccess = !!e.nativeEvent.path.find((el) =>  el.className ? el.classList.contains('contacts-success') : '')
-		// const isClose = e.target.className === 'contacts-success__close'
-		// if(isSuccess && !isClose) return
-		// if(!e.nativeEvent.path.includes(contactsBody.current) || e.target.className === 'close__contacts'){
-		// 	setSuccess(false)
-		// 	dispatch(modalToggle('contacts'))
-		// 	document.body.style.overflow = 'auto'
-		// }
+
 	}
 
 	return (

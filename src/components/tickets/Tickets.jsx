@@ -8,6 +8,7 @@ const Tickets = () => {
 	const state = useSelector(state => state.tickets.ticketsVisible)
 	const formData = useSelector(state => state.form.form)
 	let filteredTickets = []
+	
 	filteredTickets = tickets.filter((ticket) => {
 		if(ticket.Route.split('-')[0] === 'IVANO'){
 			const ticketCities = (ticket.Route.split('-').slice(0,2).join('-') + ticket.Route.split('-')[2]).toLowerCase()
@@ -23,6 +24,7 @@ const Tickets = () => {
 		const searchCities = (formData.from + formData.where).toLowerCase()
 		return ticketCities === searchCities
 	})
+
 
 	return (
 		state
