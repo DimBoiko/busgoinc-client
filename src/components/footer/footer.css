@@ -21,3 +21,16 @@
 	color: gray;
 	align-self:flex-start;
 }
+.footer__rights-btn{
+	font-family: 'Roboto',sans-serif;
+	font-weight: 600;
+
+	background:transparent;
+	color:black;
+	text-decoration:underline;
+	font-size:18px;
+	padding:0px;
+	border:none;
+	cursor:pointer
+
+}

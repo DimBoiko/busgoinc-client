@@ -25,23 +25,12 @@ const About = () => {
 					</div>
 				</div>
 				<div className="about__item">
-					<div className="about__item-title">
-						Transport from cities where hostilities are underway
-					</div>
 					<div className="about__item-text">
-					Despite the hostilities, our company is making every effort to maintain the possibility of 
-					transportation from dangerous areas of Ukraine. If you are interested in transportation from
-					 the cities of hostilities, please check the availability of such an opportunity through support.
+					Our company works with carriers that provide bus transportation of tourists across Ukraine and abroad. Our task is to find potential customers (passengers) directly or through travel companies. We pass on the information 
+					about the captured passengers to the carriers, for which we receive a reward in the form of a percentage.
 					</div>
 				</div>
-				<div className="about__item">
-					<div className="about__item-title">
-						Latest and ultra-reliable transport
-					</div>
-					<div className="about__item-text">
-					We do not have a car older then 2018 and they go through the service station before each trip
-					</div>
-				</div>
+
 			</div>
 			<Swiper/>
 			
