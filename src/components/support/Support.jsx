@@ -3,6 +3,7 @@ import './support.css'
 import viber from '../../img/viber.png'
 import telegram from '../../img/telegram.png'
 import whatsapp from '../../img/whatsapp.png'
+import gmail from '../../img/gmail-icon.svg'
 import { Transition } from 'react-transition-group';
 
 
@@ -23,6 +24,10 @@ const Support = ({visible}) => {
 					<div className="support__item">
 						<img src={whatsapp} alt="whatsapp"/>
 						<span>+380(50)-568-57-93</span>
+					</div>
+					<div className="support__item">
+						<img src={gmail} alt="gmail"/>
+						<span>Busgo.inc@gmail.com</span>
 					</div>
 				</div>
 			</div>)}

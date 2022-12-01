@@ -9,7 +9,7 @@ const Policy = ({modalHandler,policy}) => {
 				{
 					policy.map((item,index) => 
 						<div key={index} className="policy__block">
-						<h4>{item.title}</h4>
+						<h4 className='police__title'>{item.title}</h4>
 							{item.text}
 						</div>		
 					)

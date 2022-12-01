@@ -29,7 +29,10 @@
 	flex-direction: column;
 	gap: 15px;
 }
-
+.police__title{
+	margin-bottom:10px;
+	font-size:22px;
+}
 .policy__close{
 	position: absolute;
 	font-size: 36px;
