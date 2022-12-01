@@ -103,9 +103,9 @@ const returnData = [
 		`
 	},
 	{
-		title:'',
+		title:'Вашу заявку буде розглянуто протягом 1-10 днів',
 		text: `
-		Вашу заявку буде розглянуто протягом 1-10 днів Після підтвердження повернення кошти будуть автоматично повернуті на карту, з якою відбувалася оплата квитків.
+		 Після підтвердження повернення кошти будуть автоматично повернуті на карту, з якою відбувалася оплата квитків.
 		`
 	},
 ]
@@ -115,8 +115,10 @@ const Footer = () => {
 	const [info,setInfo] = useState([])
 
 	const modalHandler = (e) => {
-		setIsOpen(false)
-		document.body.style.overflow = 'visible'
+		if(e.target.className === 'policy' || e.target.className === 'policy__close'){
+			setIsOpen(false)
+			document.body.style.overflow = 'visible'
+		}
 	}
 
 	const modalOpen = (e) => {
@@ -157,7 +159,7 @@ const Footer = () => {
 				</div>
 			</div>
 			{
-				isOpen && <Policy modalHandler={modalHandler} policy={info}/>
+				isOpen && <Policy onClick={modalHandler} modalHandler={modalHandler} policy={info}/>
 			}
 		</footer>
 	);

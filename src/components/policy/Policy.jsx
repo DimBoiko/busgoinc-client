@@ -4,7 +4,7 @@ import './policy.css'
 const Policy = ({modalHandler,policy}) => {
 
 	return (
-		<div className='policy'>
+		<div onClick={(e) => modalHandler(e)} className='policy'>
 			<div className="policy__body">
 				{
 					policy.map((item,index) => 
@@ -14,7 +14,7 @@ const Policy = ({modalHandler,policy}) => {
 						</div>		
 					)
 				}
-				<button onClick={(e) => modalHandler(e)} className="policy__close">&times;</button>
+				<button className="policy__close">&times;</button>
 			</div>
 		</div>
 	);
