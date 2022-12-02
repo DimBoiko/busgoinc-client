@@ -1,7 +1,7 @@
 export default class AdminService {
 	
 	static URL(){
-		return 'https://busgoinc.herokuapp.com'
+		return 'https://busgoincapp.onrender.com/'
 	}
 
 	static async addTicket(tickets,setTickets){

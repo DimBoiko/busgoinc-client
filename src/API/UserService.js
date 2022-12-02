@@ -1,7 +1,7 @@
 export default class UserService {
 	static async login(user){
 		try{
-			const res = await fetch('https://busgoinc.herokuapp.com/user',{
+			const res = await fetch('https://busgoincapp.onrender.com/user',{
 				method:'POST',
 				headers:{
 					'Content-Type':'application/json'

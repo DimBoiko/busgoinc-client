@@ -17,7 +17,7 @@ const Contacts = ({visible}) => {
 		try{
 			e.preventDefault()
 			const data = {name,tel,desc}
-			const res = await fetch('https://busgoinc.herokuapp.com/contacts',{
+			const res = await fetch('https://busgoincapp.onrender.com/contacts',{
 				method:'POST',
 				headers:{
 					'Content-Type':'application/json'

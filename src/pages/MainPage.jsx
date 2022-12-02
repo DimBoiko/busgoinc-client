@@ -15,7 +15,7 @@ function MainPage() {
 	const dispatch = useDispatch()
 	const getTickets = async () => {
 		try{
-			const res =  await fetch('https://busgoinc.herokuapp.com/')
+			const res =  await fetch('https://busgoincapp.onrender.com/')
 			let {ticketsData,data} =  await res.json()
 			const multiplier = data.multiplier
 			if(ticketsData){
