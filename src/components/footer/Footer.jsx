@@ -142,7 +142,7 @@ const Footer = () => {
 						Shevchenko st., 162a, Chernigov
 					</div>
 					<div className="footer__email">
-						BUSGO.INC@GMAIL.COM
+						busgolncua@gmail.com
 					</div>
 					<button onClick={(e) => modalOpen(e)} className="footer__rights-btn policy-btn">
 					Політика конфіденційності
@@ -155,7 +155,7 @@ const Footer = () => {
 					</button>
 				</div>
 				<div className="footer__rights">
-					© 2022, BusGoInc. Online ticketing service. All rights reserved
+					© 2023, BusGoInc. Online ticketing service. All rights reserved
 				</div>
 			</div>
 			{

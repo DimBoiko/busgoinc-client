@@ -40,6 +40,9 @@
 	text-align: justify;
 	margin-top: 5px;
 }
+.payment-instruction__paypal-text b{
+	font-size:20px;
+}
 .payment-instruction__cards-text{
 	font-size: 17px;
 	text-align: justify;

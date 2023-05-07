@@ -62,7 +62,10 @@ const PaymentInstruction = ({back,ticket,buyer,inputs,setAbout}) => {
 					<img src={paypal} className="payment-logo" alt="paypal" />	
 					<div className="payment-instruction__paypal-text">
 						Make a payment in the amount of <b>{ticket.price} UAH</b> using paypal 
-						to the <b>Busgo.inc@gmail.com</b> account, then upload a screen or photo confirming the payment.
+						to the <b>gobusincua@gmail.com</b> account, then upload a screen or photo confirming the payment.
+						<br/>
+						If you have any technical problems with payment, our manager will issue you another 
+						account details on Paypal within 5 minutes
 					</div>
 
 				</div>
