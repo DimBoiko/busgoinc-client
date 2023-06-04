@@ -30,10 +30,16 @@ const PaymentInstruction = ({back,ticket,buyer,inputs,setAbout}) => {
 			if(file){
 				data.append('screen',file)
 			}
-			const res = await fetch('https://busgoincapp.onrender.com/purchase',{
+			// const res = await fetch('https://busgoincapp.onrender.com/purchase',{
+			// 	method:'POST',
+			// 	body:data
+			// })
+
+			const res = await fetch('http://localhost:5000/purchase',{
 				method:'POST',
 				body:data
 			})
+
 			if(res){
 				if(isBuyFromTicket){
 					setSuccess({state:true,text:`Your order №${buyer.id} is being processed. Our manager will contact you as soon as possible.`})

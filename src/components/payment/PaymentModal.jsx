@@ -36,12 +36,9 @@ const PaymentModal = () => {
 			setUser({...user,email : e.target.value})
 			// eslint-disable-next-line no-useless-escape
 			if(user.email.length > 3){
-				console.log(e.target);
-				e.target.classList.add('green-show')
 				const newData = {...buyerData,email:true}
 				setBuyerData(newData)
 			}else{
-				e.target.classList.remove('green-show')
 				setBuyerData({...buyerData,email:false})
 			}
 		}
@@ -50,11 +47,9 @@ const PaymentModal = () => {
 			// eslint-disable-next-line no-useless-escape
 
 			if(String(user.phone).length + 1 > 6){
-				e.target.classList.add('green-show')
 				setBuyerData({...buyerData,phone:true})
 				return
 			}
-			e.target.classList.remove('green-show')
 			setBuyerData({...buyerData,phone:false})
 		}
 	}
@@ -68,22 +63,19 @@ const PaymentModal = () => {
 	},[instructionVisible])
 
 	useEffect(()=>{
-		const isInputsValid = 
-			inputs.filter((input)=> {
-			return(
-				input.name.length > 2
-				&&
-				input.lastname.length > 2
-				)
-			}).length === inputs.length
-			&&
-			Object.values(buyerData).every((input)=> input)
-	
-		if(checkbox && isInputsValid){
-			setIsValid(true)
-		}else{
-			setIsValid(false)
-		}
+		const isValid = 
+		user.email.length > 3 
+		&&
+		user.phone.length > 3
+		&&
+		inputs[0].name.length > 3
+		&&
+		inputs[0].lastname.length > 3
+		&&
+		checkbox
+
+		setIsValid(isValid)
+
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	},[user,checkbox,inputs])
 
@@ -164,15 +156,17 @@ const PaymentModal = () => {
 						<div className="payment-modal__inputs">
 							<div className="payment-modal__input">
 									<label htmlFor="payment-email">Email:</label>
-									<input 
-									onChange = {(e)=>{inputsValidate(e)}}
+									<input
+									className={user.email.length > 3 ? 'green-show' : ''} 
 									ref={emailInput}
-									value={user.email} 
+									value={user.email}
+									onChange = {(e)=>{inputsValidate(e)}}
 									placeholder='example@gmail.com' id='payment-email' type="email"/>
 								</div>
 								<div className="payment-modal__input">
 									<label htmlFor="payment-phone">Phone:</label>
 									<input 
+									className={user.phone.length > 3 ? 'green-show' : ''}
 									ref={phoneInput}
 									value={user.phone} 
 									onChange = {(e) => inputsValidate(e)}

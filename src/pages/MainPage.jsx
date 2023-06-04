@@ -39,6 +39,9 @@ function MainPage() {
 
 	const closeModals = (e) => {
 		const path = e.nativeEvent.path
+		
+		if(!path) return
+
 		const isPassengers = path.find((el)=> el.classList ? el.classList.contains('passengers') :'')
 		const isRoutes = path.find((el)=> el.classList ? el.classList.contains('routes') :'')
 		if(!isPassengers){

@@ -55,9 +55,6 @@ const Form = () => {
 		if(!e.target.classList.contains('form__input')){
 			dispatch(setRoutes(false))
 		}
-		if(!e.nativeEvent.path.includes(passengerBlock.current) && !passengersModal.current.classList.contains('show-passengers')){
-			return
-		}
 	}
 
 	const togglePassengers = (e) => {
@@ -117,7 +114,9 @@ const Form = () => {
 
 
 	return (
-	 <form onClick={(e)=>closeRoutes(e)} className="tickets form" action="">
+	 <form 
+	 id='close-routes'
+	 onClick={(e)=>closeRoutes(e)} className="tickets form" action="">
       <div className="form__items">
         <div className="form__item from">
           <div className="form__item-input">
