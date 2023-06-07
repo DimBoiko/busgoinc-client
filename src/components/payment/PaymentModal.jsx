@@ -104,20 +104,8 @@ const PaymentModal = () => {
 	}
 
 	const confirmForm = (e) => {
-		const isInputsValid = 
-			inputs.filter((input)=> {
-			return(
-				input.name.length > 2
-				&&
-				input.lastname.length > 2
-				)
-			}).length === inputs.length
-			&&
-			Object.values(buyerData).every((input)=> input)
-	
-		if(checkbox && isInputsValid){
-			setInstructionVisible(true)
-		}
+		if(isValid) setInstructionVisible(true)
+		
 	}
 	
 	const showInfo = () => {
