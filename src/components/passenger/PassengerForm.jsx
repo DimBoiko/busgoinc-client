@@ -15,20 +15,20 @@ const PassengerForm = ({passenger}) => {
 	const lastnameInput = useRef(null)
 	useEffect(()=>{
 		dispatch(setInputs(user))
-		if(user.name.length > 2){
+		if(user.name.length > 0){
 			nameInput.current.classList.add('green-show')
 			// nameInput.current.style.boxShadow = '0px 0px 1px 1px #32c453'
 		}
-		if(user.name.length < 3){
+		if(user.name.length < 1){
 			nameInput.current.classList.remove('green-show')
 			// nameInput.current.style.boxShadow = '0px 0px 0px 0px #32c453'
 		}
-		if(user.lastname.length > 2){
+		if(user.lastname.length > 0){
 			lastnameInput.current.classList.add('green-show')
 
 			// lastnameInput.current.style.boxShadow = '0px 0px 1px 1px #32c453'
 		}
-		if(user.lastname.length < 3){
+		if(user.lastname.length < 1){
 			lastnameInput.current.classList.remove('green-show')
 
 			// lastnameInput.current.style.boxShadow = '0px 0px 0px 0px #32c453'

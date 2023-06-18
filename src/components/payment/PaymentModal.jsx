@@ -35,7 +35,7 @@ const PaymentModal = () => {
 		if(e.target.id === 'payment-email'){
 			setUser({...user,email : e.target.value})
 			// eslint-disable-next-line no-useless-escape
-			if(user.email.length > 3){
+			if(user.email.length > 1){
 				const newData = {...buyerData,email:true}
 				setBuyerData(newData)
 			}else{
@@ -46,7 +46,7 @@ const PaymentModal = () => {
 			setUser({...user,phone : e.target.value})
 			// eslint-disable-next-line no-useless-escape
 
-			if(String(user.phone).length + 1 > 6){
+			if(String(user.phone).length + 1 > 1){
 				setBuyerData({...buyerData,phone:true})
 				return
 			}
@@ -64,13 +64,13 @@ const PaymentModal = () => {
 
 	useEffect(()=>{
 		const isValid = 
-		user.email.length > 3 
+		user.email.length > 0 
 		&&
-		user.phone.length > 3
+		user.phone.length > 0
 		&&
-		inputs[0].name.length > 3
+		inputs[0].name.length > 0
 		&&
-		inputs[0].lastname.length > 3
+		inputs[0].lastname.length > 0
 		&&
 		checkbox
 
@@ -145,7 +145,7 @@ const PaymentModal = () => {
 							<div className="payment-modal__input">
 									<label htmlFor="payment-email">Email:</label>
 									<input
-									className={user.email.length > 3 ? 'green-show' : ''} 
+									className={user.email.length > 0 ? 'green-show' : ''} 
 									ref={emailInput}
 									value={user.email}
 									onChange = {(e)=>{inputsValidate(e)}}
@@ -154,7 +154,7 @@ const PaymentModal = () => {
 								<div className="payment-modal__input">
 									<label htmlFor="payment-phone">Phone:</label>
 									<input 
-									className={user.phone.length > 3 ? 'green-show' : ''}
+									className={user.phone.length > 0 ? 'green-show' : ''}
 									ref={phoneInput}
 									value={user.phone} 
 									onChange = {(e) => inputsValidate(e)}
