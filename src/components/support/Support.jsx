@@ -1,7 +1,6 @@
 import React from 'react';
 import './support.css'
 import viber from '../../img/viber.png'
-import telegram from '../../img/telegram.png'
 import whatsapp from '../../img/whatsapp.png'
 import gmail from '../../img/gmail-icon.svg'
 import { Transition } from 'react-transition-group';
