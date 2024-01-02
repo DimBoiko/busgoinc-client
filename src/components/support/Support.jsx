@@ -17,10 +17,6 @@ const Support = ({visible}) => {
 						<img src={viber} alt="viber"/>
 						<span>+380 (91)-603-86-90</span>
 					</div>
-					<div className="support__item telegram">
-						<img src={telegram} alt="telegram"/>
-						<a href='https://t.me/busgoinc' target='_blank' rel="noreferrer">@BusGoInc</a>
-					</div>
 					<div className="support__item">
 						<img src={whatsapp} alt="whatsapp"/>
 						<span>+380 (99)-673-4517</span>
